@@ -1,0 +1,146 @@
+
+class NoEndings
+{
+	end1 = ;
+  end2 = ;
+  end3 = ;
+  end4 = ;
+  end5 = ;
+  end6 = ;
+  lost = ;
+};
+class MissionDefault : NoEndings
+{
+ lives = -1;
+};
+
+
+class Campaign
+{
+	briefingName = "*Operation Giraffe*";
+	author = "Purple Giraffes";
+	overviewPicture = "\Pictures\overview_ca.jpg";
+	overviewText = "Responding to calls for outside intervention, NATO forces deploy to the Republic of Altis and Stratis to support the local resistance fighters, struggling against rebelling radical right-wing army troops.";
+
+	firstBattle = ChapterA;
+		////////////////////////////////////////////////////////////////////////////////////////
+	class ChapterA
+	{
+		name = "Act I - Landfall";	// a fade in to the player of where they're at.
+  	cutscene = ;								// an optional cutscene.
+  	firstMission = MissionA1;		// note the liberal use of semi colons, or crash
+  	end1 = ChapterB;
+  	end2 = ChapterB;
+  	end3 = ChapterB;
+  	end4 = ChapterB;
+  	end5 = ChapterB;
+  	end6 = ChapterB;
+  	lost = ChapterA;
+
+  	class MissionA1: MissionDefault
+  	{
+			briefingName = "Enemy Of My Enemy";
+			author = "EsotericReverie";
+			overviewText = "Resistance fighters attempt to destroy a radio tower to disrupt enemy communications.";
+			overviewTextLocked = "";
+			overviewPicture = ;
+
+			noAward=true;
+			end1 = MissionA2;            // which mission to play on a successful ending
+			end2 = MissionA2;            // which mission to play on a slightly less successful outcome
+			end3 = MissionA2;            // etc
+			end4 = MissionA2;
+			end5 = MissionA2;
+			end6 = MissionA2;            //
+			lost = MissionA1;            // which mission to replay if you die. this one.
+			template = MissionA1.Altis;  // The folder in the Missions/ directory containing the mission
+  	};
+
+  	class MissionA2: MissionDefault
+  	{
+			briefingName = "Divers";
+			author = "TrooperWally";
+			overviewText = "";
+			overviewTextLocked = "";
+			overviewPicture = ;
+
+			noAward=true;
+			end1 = MissionA3;            // which mission to play on a successful ending
+			end2 = MissionA3;            // which mission to play on a slightly less successful outcome
+			end3 = MissionA3;            // etc
+			end4 = MissionA3;
+			end5 = MissionA3;
+			end6 = MissionA3;            //
+			lost = MissionA2;            // which mission to replay if you die. this one.
+			template = MissionA2.Altis;  // The folder in the Missions/ directory containing the mission
+  	};
+
+  	class MissionA3: MissionDefault
+  	{
+			briefingName = "Seize artillery";
+			author = "LaKroy";
+			overviewText = "";
+			overviewTextLocked = "";
+			overviewPicture = ;
+
+			noAward=true;
+			end1 = MissionA4;            // which mission to play on a successful ending
+			end2 = MissionA4;            // which mission to play on a slightly less successful outcome
+			end3 = MissionA4;            // etc
+			end4 = MissionA4;
+			end5 = MissionA4;
+			end6 = MissionA4;            //
+			lost = MissionA3;            // which mission to replay if you die. this one.
+			template = MissionA3.Altis;  // The folder in the Missions/ directory containing the mission
+  	};
+
+  	class MissionA4: MissionDefault
+  	{
+  		briefingName = "Lights Out";
+			author = "Nick";
+			overviewText = "";
+			overviewTextLocked = "";
+			overviewPicture = ;
+
+			noAward=true;
+			lost = MissionA4;            // which mission to replay if you die. this one.
+			template = MissionA4.Altis;  // The folder in the Missions/ directory containing the mission
+  	};
+	};
+	////////////////////////////////////////////////////////////////////////////////////////
+	class ChapterB: NoEndings
+	{
+		name = "Act II - Landfall";	// a fade in to the player of where they're at.
+  	cutscene = ;								// an optional cutscene.
+  	firstMission = MissionB1;
+  	end1 = ChapterC;
+  	end2 = ChapterC;
+  	end3 = ChapterC;
+  	end4 = ChapterC;
+  	end5 = ChapterC;
+  	end6 = ChapterC;
+  	lost = ChapterB;
+	};
+	////////////////////////////////////////////////////////////////////////////////////////
+	class ChapterC: NoEndings
+	{
+		name = "Act III - Landfall";	// a fade in to the player of where they're at.
+  	cutscene = ;									// an optional cutscene.
+  	firstMission = MissionC1;			// note the liberal use of semi colons, or crash
+  	end1 = ChapterD;
+  	end2 = ChapterD;
+  	end3 = ChapterD;
+  	end4 = ChapterD;
+  	end5 = ChapterD;
+  	end6 = ChapterD;
+  	lost = ChapterC;
+	};
+	////////////////////////////////////////////////////////////////////////////////////////
+	class ChapterD: NoEndings
+	{
+		name = "Act IV - Landfall";	// a fade in to the player of where they're at.
+  	cutscene = ;								// an optional cutscene.
+  	firstMission = MissionD1;		// note the liberal use of semi colons, or crash
+  	lost = ChapterD;
+	};
+};
